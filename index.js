@@ -14,6 +14,10 @@ app.get('/chat', (req, res) => {
   res.sendFile(__dirname + '/views/chat.html');
 });
 
+app.get('/secret-chat', (req, res) => {
+  res.sendFile(__dirname + '/views/chat.html');
+});
+
 io.on('connection', (socket) => {
   socket.on('chat message', msg => {
     io.emit('chat message', msg);
